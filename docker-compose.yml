@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  sydneyactive:
+    image: ${DOCKER_REGISTRY-}sydneyactive
+    build:
+      context: .
+      dockerfile: SydneyActive/Dockerfile

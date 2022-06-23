@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1700.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SydneyActive", "SydneyActive\SydneyActive.csproj", "{B10456ED-32CD-4D36-8820-01F47413A8DD}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4DFF0CAD-7C4C-4B59-8AAD-D7D8A036E35F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B10456ED-32CD-4D36-8820-01F47413A8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B10456ED-32CD-4D36-8820-01F47413A8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B10456ED-32CD-4D36-8820-01F47413A8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DFF0CAD-7C4C-4B59-8AAD-D7D8A036E35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DFF0CAD-7C4C-4B59-8AAD-D7D8A036E35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DFF0CAD-7C4C-4B59-8AAD-D7D8A036E35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DFF0CAD-7C4C-4B59-8AAD-D7D8A036E35F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
