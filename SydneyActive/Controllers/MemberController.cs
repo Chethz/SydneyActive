@@ -21,6 +21,27 @@ namespace SydneyActive.Controllers
             IEnumerable<Member> objMemberList = _db.Members.ToList();
             return View(objMemberList);
         }
-    }
-}
 
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Member obj)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View(obj);
+            }
+            _db.Members.Add(obj);
+            _db.SaveChanges();
+            //TempData["sucess"] = "Category created sucessfully";
+            return RedirectToAction("index");
+        }
+    }
+
+}
