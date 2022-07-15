@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace SydneyActive.Models
 {
@@ -13,9 +14,9 @@ namespace SydneyActive.Models
         [Required]
         public string LastName { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
         public DateTime StartDate { get; set; } = DateTime.Now;
 
+        [Phone(ErrorMessage = "Invalid Phone Number")]
         public string ContactNumber { get; set; }
     }
 }

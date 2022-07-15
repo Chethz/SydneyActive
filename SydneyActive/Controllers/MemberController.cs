@@ -22,12 +22,14 @@ namespace SydneyActive.Controllers
             return View(objMemberList);
         }
 
+        //Get
         public IActionResult Create()
         {
 
             return View();
         }
 
+        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Member obj)
@@ -36,6 +38,11 @@ namespace SydneyActive.Controllers
             if (!ModelState.IsValid)
             {
                 return View(obj);
+            }
+            var memberExist = _db.Members.Contains(new Member { FirstName = obj.FirstName, LastName = obj.LastName, ContactNumber = obj.ContactNumber});
+            if (memberExist)
+            {
+                Console.Write("Error");
             }
             _db.Members.Add(obj);
             _db.SaveChanges();
