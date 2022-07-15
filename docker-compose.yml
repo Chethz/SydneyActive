@@ -6,3 +6,28 @@ services:
     build:
       context: .
       dockerfile: SydneyActive/Dockerfile
+    ports:
+      - '8080:80'
+    env_file:
+      - ./.env
+    environment:
+      - 'ASPNETCORE_ENVIRONMENT=${DEV_ENV}'
+      - 'ConnectionStrings:DefaultConnection=${CONTAINER_DB_CONNECTION}'
+    container_name: sydneyactiveapp
+    depends_on:
+      - sqlserver
+  sqlserver:
+    image: 'mcr.microsoft.com/azure-sql-edge:latest'
+    env_file:
+      - ./.env
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: '${SA_PASSWORD}'
+      MSSQL_PID: Developer
+    ports:
+      - '1402:1433'
+    volumes:
+      - 'db-data:/var/opt/mssql'
+    container_name: sqlserver
+volumes:
+  db-data:
